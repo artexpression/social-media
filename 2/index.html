@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section >
+        <div class="bg"></div>
+        <header><a href="#" class="logo">Computador</a></header>
+        <div class="content">
+            <div class="textBox">
+                <h2>Diseño display  </h2>
+                    <p>Podemos ver el diseño de un megabanner, rascacielos,robapaginas ,<br> este diseño tiene como producto un computador<br> Nombre: </p>
+                    <a href="file:///C:/Users/maste/Downloads/Taller%20display.pdf">ver PDF</a>
+              
+            </div>
+            <div class="imgBox">
+                <img src="img/14.png" alt="megabanner" class="producto">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li data-text = "Megabanner" class="active"  ><img src="img/banner-de-carretera.png" alt="" onclick="imgSlider('img/14.png');changeBgColor('#122E7D')" ></li>
+            <li data-text = "rascacielos" id="imagen-2"><img src="img/rascacielos.png" class="rascacielo" alt="" onclick="imgSlider('img/15.png');changeBgColor('#6D7382')" ></li>
+            <li data-text = "robapaginas" id="imagen-3"><img src="img/hacker.png" alt="" onclick="imgSlider('img/16.png');changeBgColor('#4AA2C9 ')"></li>
+        </ul>
+        <ul class="sci"></ul>
+
+    </section>
+
+    <script>
+        // cambia la imagen
+        function imgSlider(anything){
+            document.querySelector('.producto').src = anything;
+        }
+            // cambiar color
+            function changeBgColor(color){
+                const bg = document.querySelector('.bg');
+                bg.style.background = color;
+            }
+
+
+      
+
+        // cambia las letras con la clase active
+        let el = document.querySelectorAll('.thumb li');
+        for (let i = 0; i < el.length; i++){
+            el[i].onclick = function(){
+                var c = 0;
+                while (c < el.length){
+                    el[c++].className = 'check';
+                }
+                el[i].className = 'check active';
+            }
+            
+
+        }
+    </script>
+</body>
+</html>
